@@ -1,6 +1,7 @@
 'use strict';
 
 import selectClub from "./modules/selectClub";
+import modalWindow from "./modules/modalWindow";
 
 
 
@@ -10,3 +11,4 @@ import selectClub from "./modules/selectClub";
 
 
 selectClub()
+modalWindow()
