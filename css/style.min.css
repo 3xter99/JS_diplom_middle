@@ -748,6 +748,9 @@ a, button {
 .hidden-large {
     display: none
 }
+.hidden-large-menu {
+    display: none;
+}
 
 .menu-fix {
     position: fixed;

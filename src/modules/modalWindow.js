@@ -2,19 +2,22 @@
 
 const modalWindow = () => {
     const body = document.querySelector('body');
-    const popupBtn = document.querySelector('.open-popup');
-    const popupContent = document.querySelector('.form-wrapper');
+    const fixedGift = document.querySelector('.fixed-gift');
 
     body.addEventListener('click', (event) => {
-        const target = event.target
-        if (target.dataset.popup) {
-            const popup = document.querySelector(`${target.dataset.popup}`)
+        const targetPopup = event.target.dataset.popup
+        if (targetPopup) {
+            const popup = document.querySelector(`${targetPopup}`)
+            if (targetPopup === '#gift') {
+                fixedGift.style.display = 'none'
+            }
+            
+            
             popup.style.display = 'block';
 
 
             popup.addEventListener('click', (event) => {
                 let target = event.target;
-                console.log(target);
 
                 if (target.classList.contains('close_icon')) {
                     popup.style.display = 'none'
