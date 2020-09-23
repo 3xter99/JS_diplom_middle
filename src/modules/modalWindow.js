@@ -19,11 +19,11 @@ const modalWindow = () => {
             popup.addEventListener('click', (event) => {
                 let target = event.target;
 
-                if (target.classList.contains('close_icon')) {
+                if (target.classList.contains('close_icon') || target.closest('.close-btn')) {
                     popup.style.display = 'none'
                 } else {
                     target = target.closest('.form-wrapper')
-                    if (!target) {
+                    if (!target ) {
                         popup.style.display = 'none'
                     }
                 }
