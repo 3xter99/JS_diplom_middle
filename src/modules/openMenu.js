@@ -1,10 +1,15 @@
 
 'use strict';
 const openMenu = () => {
-    const menuBtn = document.querySelector('.menu-button>img')
     const popupMenu = document.querySelector('.popup-menu');
-    menuBtn.addEventListener('click', () => {
-        popupMenu.style.display = 'flex,'
+    const headerMenu = document.querySelector('.header-main');
+    headerMenu.addEventListener('click', (event) => {
+        const target = event.target;
+        if (target.closest('.menu-button>img')) {
+            popupMenu.style.display = 'flex'
+        } else if (target.closest('.scroll>a') || target.closest('.close-menu-btn>img')) {
+            popupMenu.style.display = 'none'
+        }
     })
 }
 

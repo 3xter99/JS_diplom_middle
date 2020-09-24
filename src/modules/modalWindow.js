@@ -12,7 +12,6 @@ const modalWindow = () => {
                 fixedGift.style.display = 'none'
             }
             
-            
             popup.style.display = 'block';
 
 
