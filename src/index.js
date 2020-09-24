@@ -3,8 +3,8 @@
 import selectClub from "./modules/selectClub";
 import modalWindow from "./modules/modalWindow";
 import openMenu from "./modules/openMenu";
-import mainSlider from "./modules/mainSlider";
-
+import sliders from "./modules/Sliders";
+import scrollBtn from "./modules/scrollBtn";
 
 
 
@@ -13,4 +13,6 @@ import mainSlider from "./modules/mainSlider";
 selectClub()
 modalWindow()
 openMenu()
-mainSlider()
+sliders('.main-slider>.slide')
+sliders('.gallery-slider>.slide')
+scrollBtn()

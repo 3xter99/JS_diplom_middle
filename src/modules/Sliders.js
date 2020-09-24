@@ -1,9 +1,8 @@
 'use strict';
 
-const mainSlider = () => {
+const sliders = (selector) => {
 
-        const slide = document.querySelectorAll('.slide');
-
+        const slide = document.querySelectorAll(selector);
         let currentSlide = 0,
             interval;
 
@@ -11,14 +10,14 @@ const mainSlider = () => {
             element[index].style.display = 'none'
         }
         const nextSlide = (element, index) => {
-            element[index].style.display = ''
+            element[index].style.display = 'flex'
         }
 
 
         const autoPlaySlide = () => {
             prevSlide(slide, currentSlide)
             currentSlide++
-            if (currentSlide >= 5) {
+            if (currentSlide >= slide.length) {
                 currentSlide = 0
             }
             nextSlide(slide, currentSlide)
@@ -35,4 +34,4 @@ const mainSlider = () => {
 
     }
 
-export default mainSlider;
+export default sliders;
