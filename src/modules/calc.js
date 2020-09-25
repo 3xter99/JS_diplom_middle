@@ -18,33 +18,42 @@ const calc = () => {
           12 : 24990
       }
   }
+  let promoTrueOrFalse = false
+
+    const promoInput = document.querySelector('input[placeholder="Промокод"]')
+    promoInput.addEventListener('change', () => {
+      promoTrueOrFalse = promoInput.value === 'ТЕЛО2020';
+      // if (promoTrueOrFalse) {
+      //     priceTotal.textContent *= 0.7
+      // }
+    })
+
 
   const clubCalc = (club, target, month = 1) => {
         if (!target.closest('.time>input') && !target.closest('.club>input')) {
           return
         }
-      // console.log(a)
-// const promo = document.querySelector('.price-message>input')
-//       promo.addEventListener('change', () => {
-//           console.log(promo.value)
-//           if (promo.value === 'ТЕЛО2019') {
-//               priceTotal.textContent = Math.round(prise[club][target.value] * 0.70)
-//           }
-//       })
-        priceTotal.textContent = prise[club][month]
+        if (promoTrueOrFalse) {
+            priceTotal.textContent = Math.round(prise[club][month] * 0.7)
+        } else priceTotal.textContent = prise[club][month]
+
   }
 
-
+// кликаем по кнопкам
      const cardOrder = document.querySelectorAll('input[type="radio"]')
     cardOrder.forEach(item => {
         item.addEventListener('click', event => {
             let month = 0;
+            //перебераю массив с выбором месяца
             time.forEach(item => {
+                // если какой то чек бокс с выбором месяца нажат
                 if (item.checked) {
+                    //то в переменную записываем значение этого чекбокса (1 или 6, 9, 12)
                     month = item.value
                 }
             })
-
+                // если нажат чек на какой то клуб - то вызываем функцию калькулятор и передаем название, таргет и
+                //переменную month
             const target = event.target
             if (cardSchelkovo.checked) {
                 clubCalc('schelkovo', target, month)
