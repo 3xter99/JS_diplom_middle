@@ -13,9 +13,7 @@ class sliderCarousel {
                     infinity = false,
                     responsive = [],
                 }) {
-        if (!main || !wrap) {
-            console.warn('slider-carousel: Необходимо ввести 2 свойства(main, wrap)');
-        }
+
         this.main = document.querySelector(main);
         this.wrap = document.querySelector(wrap);
         this.next = document.querySelector(next);
