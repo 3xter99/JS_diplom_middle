@@ -4,6 +4,7 @@ const calc = () => {
         cardMozaika = document.getElementById('card_leto_mozaika'),
         priceTotal = document.getElementById('price-total'),
         time = document.querySelectorAll('.time>input')
+    let month = 0;
   const prise = {
       mozaika: {
           1 : 1990,
@@ -22,14 +23,11 @@ const calc = () => {
 
     const promoInput = document.querySelector('input[placeholder="Промокод"]')
     promoInput.addEventListener('change', () => {
-      promoTrueOrFalse = promoInput.value === 'ТЕЛО2020';
-      // if (promoTrueOrFalse) {
-      //     priceTotal.textContent *= 0.7
-      // }
+        clubCalc()
     })
 
 
-  const clubCalc = (club, target, month = 1) => {
+  const clubCalc = (club, target, month = 1, promo = 0) => {
         if (!target.closest('.time>input') && !target.closest('.club>input')) {
           return
         }
@@ -43,7 +41,7 @@ const calc = () => {
      const cardOrder = document.querySelectorAll('input[type="radio"]')
     cardOrder.forEach(item => {
         item.addEventListener('click', event => {
-            let month = 0;
+
             //перебераю массив с выбором месяца
             time.forEach(item => {
                 // если какой то чек бокс с выбором месяца нажат
@@ -55,6 +53,9 @@ const calc = () => {
                 // если нажат чек на какой то клуб - то вызываем функцию калькулятор и передаем название, таргет и
                 //переменную month
             const target = event.target
+
+
+
             if (cardSchelkovo.checked) {
                 clubCalc('schelkovo', target, month)
             } else
