@@ -6,9 +6,9 @@ import openMenu from "./modules/openMenu";
 import sliders from "./modules/Sliders";
 import scrollBtn from "./modules/scrollBtn";
 import calc from "./modules/calc";
-import promo from "./modules/promo";
 import sliderCarousel from "./modules/sliderCarousel";
 import sendForm from "./modules/sendForrm";
+import maskPhone from "./modules/maskPhone";
 
 
 
@@ -20,7 +20,6 @@ sliders('.main-slider>.slide')
 sliders('.gallery-slider>.slide')
 scrollBtn()
 calc()
-promo()
 
 
 let sliderCar = new sliderCarousel({
@@ -33,8 +32,8 @@ let sliderCar = new sliderCarousel({
 })
 sliderCar.init()
 
-sendForm('form2')
+sendForm()
 // sendForm()
 // sendForm()
 
-
+maskPhone('input[name="phone"]');

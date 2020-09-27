@@ -1,6 +1,7 @@
 const path = require('path')
 module.exports = {
     entry: {
+        context: path.join(__dirname, 'src'),
         main: './src/index.js'
     },
     output: {
@@ -11,6 +12,7 @@ module.exports = {
     devServer: {
         overlay: true
     },
+    devtool: 'source-map',
     module: {
         rules: [
             {

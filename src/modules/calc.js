@@ -3,6 +3,9 @@ const calc = () => {
     const priceTotal = document.getElementById('price-total');
     const form = document.querySelector('.cardPrice');
 
+    if (!form) {
+      return
+    }
   const prices = {
       mozaika: {
           1 : 1990,
