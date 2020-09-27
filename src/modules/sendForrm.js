@@ -31,9 +31,14 @@ const sendForm = (id, color) => {
 
         const formDara = new FormData(form)
         let body = {}
+        if(!name.value) {
+            alert('Поле имя не заполнено');
+            return;
+        }
 
         formDara.forEach((val, key) => {
             body[key] = val
+
         })
 
         postData(body)
@@ -41,7 +46,7 @@ const sendForm = (id, color) => {
                 if (response.status !== 200) {
                     throw new Error('Статус нетворк нот 200')
                 }
-                preloader.classList.add('loaded')
+                // preloader.classList.add('loaded')
                 userName.forEach(item => item.value = '')
                 userPhone.forEach(item => item.value = '')
                 statusMessage.textContent = successMessage

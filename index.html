@@ -54,7 +54,7 @@
             <ul class="hidden-small">
                 <li class="scroll"><a href="#clubs">Клубы</a></li>
                 <li class="scroll"><a href="#services">Услуги</a></li>
-                <li class="scroll"><a href="#cards">Клубные карты</a></li>
+                <li class="scroll"><a href="#cards">Клубные2 карты</a></li>
                 <li class="scroll"><a href="#gallery">Галерея</a></li>
                 <li class="scroll"><a href="#footer">Контакты</a></li>
             </ul>
@@ -316,17 +316,18 @@
             <div class="right">
                 <form action="" class="cardPrice" id="card_order">
                     <div class="time">
-                        <input id="m1" type="radio" name="card-type" value="1" checked>
+
+                        <input class="month-input" id="m1" type="radio" name="card-type" value="1" checked>
                         <label for="m1">1 месяц</label>
-                        <input id="m2" type="radio" name="card-type" value="6">
+                        <input class="month-input" id="m2" type="radio" name="card-type" value="6">
                         <label for="m2">6 месяцев</label>
-                        <input id="m3" type="radio" name="card-type" value="9">
+                        <input class="month-input" id="m3" type="radio" name="card-type" value="9">
                         <label for="m3">9 месяцев</label>
-                        <input id="m4" type="radio" name="card-type" value="12">
+                        <input class="month-input" id="m4" type="radio" name="card-type" value="12">
                         <label for="m4">12 месяцев</label>
                     </div>
                     <div class="club">
-                        <input type="radio" id="card_leto_mozaika" name="club-name" value="mozaika" checked><label
+                        <input class="club-input" type="radio" id="card_leto_mozaika" name="club-name" value="mozaika" checked><label
                             for="card_leto_mozaika">
                         <h5>Тело «Мозаика»</h5>
                         <p>Россия, Москва, 7-я Кожуховская ул., 9</p>
@@ -334,15 +335,15 @@
                     </div>
 
                     <div class="club">
-                        <input type="radio" id="card_leto_schelkovo" name="club-name" value="schelkovo"><label
+                        <input class="club-input" type="radio" id="card_leto_schelkovo" name="club-name" value="schelkovo"><label
                             for="card_leto_schelkovo">
                         <h5>Тело «Щелково»</h5>
                         <p>Россия, г. Щелково, ул. Советская, д. 16</p>
                     </label>
                     </div>
                     <div class="price">
-                        <div class="price-message input-text"><input name="name" type="text" required
-                                                                     placeholder="Промокод"></div>
+                        <div class="price-message input-text">
+                            <input class="promo-input" name="name" type="text" required placeholder="Промокод"></div>
                         <div class="price-message">Цена:</div>
                         <div class="price-message" id="price-total">1990</div>
                     </div>

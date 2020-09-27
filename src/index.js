@@ -23,15 +23,15 @@ calc()
 promo()
 
 
-// let sliderCar = new sliderCarousel({
-//     main: '.services-wrapper',
-//     wrap: '.services-slider',
-//     // prev: '#test-left',
-//     // next: '#test-right',
-//     slidesToShow: 4,
-//     infinity: true
-// })
-// sliderCar.init()
+let sliderCar = new sliderCarousel({
+    main: '.services-wrapper',
+    wrap: '.services-slider',
+    // prev: '#test-left',
+    // next: '#test-right',
+    slidesToShow: 4,
+    infinity: true
+})
+sliderCar.init()
 
 sendForm('form2')
 // sendForm()

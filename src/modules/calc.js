@@ -1,11 +1,9 @@
-'use strict';
+
 const calc = () => {
-    const cardSchelkovo = document.getElementById('card_leto_schelkovo'),
-        cardMozaika = document.getElementById('card_leto_mozaika'),
-        priceTotal = document.getElementById('price-total'),
-        time = document.querySelectorAll('.time>input')
-    let month = 0;
-  const prise = {
+    const priceTotal = document.getElementById('price-total');
+    const form = document.querySelector('.cardPrice');
+
+  const prices = {
       mozaika: {
           1 : 1990,
           6 : 9900,
@@ -19,51 +17,40 @@ const calc = () => {
           12 : 24990
       }
   }
-  let promoTrueOrFalse = false
 
-    const promoInput = document.querySelector('input[placeholder="Промокод"]')
-    promoInput.addEventListener('change', () => {
-        clubCalc()
-    })
-
-
-  const clubCalc = (club, target, month = 1, promo = 0) => {
-        if (!target.closest('.time>input') && !target.closest('.club>input')) {
-          return
-        }
-        if (promoTrueOrFalse) {
-            priceTotal.textContent = Math.round(prise[club][month] * 0.7)
-        } else priceTotal.textContent = prise[club][month]
-
+  const promos = {
+      'ТЕЛО2020': 30
   }
 
-// кликаем по кнопкам
-     const cardOrder = document.querySelectorAll('input[type="radio"]')
-    cardOrder.forEach(item => {
-        item.addEventListener('click', event => {
 
-            //перебераю массив с выбором месяца
-            time.forEach(item => {
-                // если какой то чек бокс с выбором месяца нажат
-                if (item.checked) {
-                    //то в переменную записываем значение этого чекбокса (1 или 6, 9, 12)
-                    month = item.value
-                }
-            })
-                // если нажат чек на какой то клуб - то вызываем функцию калькулятор и передаем название, таргет и
-                //переменную month
-            const target = event.target
+    const handleInput = () => {
+        const monthInput = document.querySelectorAll('.month-input')
+        const clubInput = document.querySelectorAll('.club-input');
+        const promoInput = document.querySelector('.promo-input');
 
-
-
-            if (cardSchelkovo.checked) {
-                clubCalc('schelkovo', target, month)
-            } else
-            if (cardMozaika.checked) {
-                clubCalc('mozaika', target, month)
+        let month;
+        monthInput.forEach(item => {
+            if (item.checked) {
+                month = item.value;
             }
         })
-    })
+        let club;
+        clubInput.forEach(item => {
+            if (item.checked) {
+                club = item.value;
+            }
+        })
+
+        const promo = promoInput.value;
+        const discount = promos[promo] || 0
+            priceTotal.textContent = Math.round(prices[club][month] * (1 - discount/100))
+
+    }
+
+    form.addEventListener('change', handleInput)
+
+
+
 }
 
 export default calc;
