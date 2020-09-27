@@ -7,6 +7,7 @@ const sendForm = () => {
         successMessage = 'Спасибо! Мы скоро с Вами свяжемся'
 
     const forms = document.querySelectorAll('.forms');
+    const thanks = document.getElementById('thanks')
 
 
     const statusMessage = document.createElement('div')
@@ -38,6 +39,7 @@ const sendForm = () => {
                         if (response.status !== 200) {
                             throw new Error('Статус нетворк нот 200')
                         }
+                        thanks.style.display = 'block'
                         // preloader.classList.add('loaded')
                         // userName.forEach(item => item.value = '')
                         // userPhone.forEach(item => item.value = '')
