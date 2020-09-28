@@ -3,6 +3,7 @@ const slide2 = () => {
 
     const slide = document.querySelectorAll('.item'),
         slider = document.querySelector('.slider');
+    if (!slider) return
 
     let currentSlide = 0,
         interval;
