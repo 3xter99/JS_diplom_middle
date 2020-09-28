@@ -10,8 +10,7 @@ const sendForm = () => {
         catchForm = thanks.querySelector('.catch')
     let monthInput = document.querySelectorAll('.month-input');
     const preloader = document.querySelector('.preloader')
-    
-
+    console.log(monthInput);
 
 
     const statusMessage = document.createElement('div')
@@ -21,6 +20,7 @@ const sendForm = () => {
         let userPhone = form.querySelector('input[name="phone"]');
         let btn = form.querySelector('button');
         let checkbox = form.querySelector('.checkbox-popup');
+        console.log(checkbox);
 
         btn.disabled = true
         btn.style.backgroundColor = '#808080'
@@ -51,14 +51,17 @@ const sendForm = () => {
                 if (userName) {
                     userName.value = ''
                 }
-                checkbox.checked = false
+                if (checkbox) {
+                    checkbox.checked = false
+                }
+
 
 
                 userPhone.value = ''
                 setTimeout(() => {
 
                 }, 4000)
-                if (monthInput) {
+                if (monthInput && monthInput[0]) {
                     monthInput[0].checked = true
                 }
                 btn.disabled = true
