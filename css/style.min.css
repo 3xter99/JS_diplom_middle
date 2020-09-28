@@ -1001,9 +1001,9 @@ header .head .club-select .clubs-list ul {
     transform: scale(1.2)
 }
 
-.portfolio-dots {
-    display: none
-}
+/*.portfolio-dots {*/
+/*    display: none*/
+/*}*/
 
 .gallery-slider .slide {
     display: none;
