@@ -6,11 +6,8 @@ const modalWindow = () => {
 
     body.addEventListener('click', (event) => {
         const targetPopup = event.target.dataset.popup
-        // console.log(event.target);
-        console.log(targetPopup);
         if (targetPopup) {
             const popup = document.querySelector(`${targetPopup}`)
-            console.log(popup)
             if (targetPopup === '#gift') {
                 fixedGift.style.display = 'none'
             }

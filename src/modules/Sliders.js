@@ -3,23 +3,10 @@
 const sliders = (selector) => {
 
         const slide = document.querySelectorAll(selector);
-    const allDots = document.querySelector('.portfolio-dots')
         let currentSlide = 0,
             interval;
 
-    if (!slide) {
-      return
-    }
-    const addDots = () => {
-        slide.forEach(() => {
-            let li = document.createElement('li')
-            li.classList.add('dot')
-            allDots.appendChild(li)
-        })
 
-    }
-    addDots()
-    let dot = document.querySelectorAll('.dot')
 
         const prevSlide = (element, index) => {
             element[index].style.display = 'none'

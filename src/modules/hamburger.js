@@ -1,5 +1,4 @@
 const hamburger = () => {
-    console.log(document.documentElement.clientWidth);
     const topMenu = document.querySelector('.top-menu');
     window.addEventListener('resize', () => {
         if (window.innerWidth <= 767) {

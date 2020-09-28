@@ -2,9 +2,6 @@
 
 
 const sendForm = () => {
-    const errorMessage = 'Что то пошла не так...',
-        loadMessage = 'Загрузка...',
-        successMessage = 'Спасибо! Мы скоро с Вами свяжемся'
 
     const forms = document.querySelectorAll('.forms');
     const thanks = document.getElementById('thanks'),
@@ -51,7 +48,6 @@ const sendForm = () => {
 
             const formDara = new FormData(form)
             let body = {}
-            console.log(userName);
             if (userName && !userName.value) {
                 alert('Поле имя не заполнено');
                 return;

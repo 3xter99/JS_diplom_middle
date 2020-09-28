@@ -130,7 +130,6 @@ class sliderCarousel {
             if (this.options.position < 0) {
                 this.options.position = this.options.maxPosition;
             }
-            let translate = 0;
             if(this.options.position * this.options.widthSlide === 0) {
                 this.wrap.style.transform = `translateX(-2.5%)`;
             }

@@ -13,11 +13,6 @@ const slide2 = () => {
         showSlides(slideIndex -= 1);
     }
 
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    /* Основная функция слайдера */
     function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("item");
