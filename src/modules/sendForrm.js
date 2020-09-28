@@ -19,9 +19,19 @@ const sendForm = () => {
     const statusMessage = document.createElement('div')
 
     forms.forEach(form => {
+        form.addEventListener('input', (event) => {
+            const target = event.target
+            if (target.name === 'name') {
+                target.value = target.value.replace(/[^А-Яа-я\s]/, '')
+            }
+        })
+
+
         form.addEventListener('submit', (event) => {
             let userName = form.querySelector('input[name="name"]');
             let userPhone = form.querySelector('input[name="phone"]');
+
+
 
             const clearForm = () => {
                 thanks.style.display = 'block'
