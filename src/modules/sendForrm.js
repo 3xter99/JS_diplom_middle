@@ -9,7 +9,6 @@ const sendForm = () => {
         responseForm = thanks.querySelector('.response'),
         catchForm = thanks.querySelector('.catch')
     let monthInput = document.querySelectorAll('.month-input');
-    console.log(monthInput)
     
 
 
