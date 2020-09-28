@@ -22,13 +22,20 @@ const popupAll = document.querySelectorAll('.popup')
     popupAll.forEach(item => {
         item.addEventListener('click', (event) => {
             let target = event.target;
+            const inputs = item.querySelectorAll('input');
 
             if (target.classList.contains('close_icon') || target.closest('.close-btn')) {
                 item.style.display = 'none'
+                inputs.forEach(item => {
+                    item.value = ''
+                })
             } else {
                 target = target.closest('.form-wrapper')
                 if (!target ) {
                     item.style.display = 'none'
+                    inputs.forEach(item => {
+                        item.value = ''
+                    })
                 }
             }
         })

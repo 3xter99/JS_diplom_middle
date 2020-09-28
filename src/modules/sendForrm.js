@@ -16,18 +16,34 @@ const sendForm = () => {
     const statusMessage = document.createElement('div')
 
     forms.forEach(form => {
+        let userName = form.querySelector('input[name="name"]');
+        let userPhone = form.querySelector('input[name="phone"]');
+        let btn = form.querySelector('button');
+        let checkbox = form.querySelector('.checkbox-popup');
+        btn.disabled = true
+        btn.style.backgroundColor = '#808080'
+
         form.addEventListener('input', (event) => {
             const target = event.target
             if (target.name === 'name') {
                 target.value = target.value.replace(/[^А-Яа-я\s]/, '')
             }
+            if (userName.value !== '' && userPhone.value !== '' && checkbox.checked) {
+                btn.disabled = false
+                btn.style.backgroundColor = '#ffd11a'
+            } else {
+                btn.disabled = true
+                btn.style.backgroundColor = '#808080'
+            }
+
         })
 
 
         form.addEventListener('submit', (event) => {
-            let userName = form.querySelector('input[name="name"]');
-            let userPhone = form.querySelector('input[name="phone"]');
-            if (userName === '' || userPhone === '') return
+            console.log(userName.value);
+
+
+
 
 
 
@@ -49,10 +65,6 @@ const sendForm = () => {
 
             const formDara = new FormData(form)
             let body = {}
-            if (userName && !userName.value) {
-                alert('Поле имя не заполнено');
-                return;
-            }
 
             formDara.forEach((val, key) => {
                 body[key] = val
