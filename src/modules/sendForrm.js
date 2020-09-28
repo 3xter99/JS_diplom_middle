@@ -27,6 +27,7 @@ const sendForm = () => {
         form.addEventListener('submit', (event) => {
             let userName = form.querySelector('input[name="name"]');
             let userPhone = form.querySelector('input[name="phone"]');
+            if (userName === '' || userPhone === '') return
 
 
 
