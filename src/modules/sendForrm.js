@@ -10,7 +10,6 @@ const sendForm = () => {
         catchForm = thanks.querySelector('.catch')
     let monthInput = document.querySelectorAll('.month-input');
     const preloader = document.querySelector('.preloader')
-    console.log(monthInput);
 
 
     const statusMessage = document.createElement('div')
@@ -20,7 +19,6 @@ const sendForm = () => {
         let userPhone = form.querySelector('input[name="phone"]');
         let btn = form.querySelector('button');
         let checkbox = form.querySelector('.checkbox-popup');
-        console.log(checkbox);
 
         btn.disabled = true
         btn.style.backgroundColor = '#808080'
