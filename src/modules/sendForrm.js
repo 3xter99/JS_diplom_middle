@@ -28,7 +28,7 @@ const sendForm = () => {
             if (target.name === 'name') {
                 target.value = target.value.replace(/[^А-Яа-я\s]/, '')
             }
-            if (userName.value !== '' && userPhone.value !== '' && checkbox.checked) {
+            if (!userName || userName.value !== '' && userPhone.value !== '' && !checkbox || checkbox.checked ) {
                 btn.disabled = false
                 btn.style.backgroundColor = '#ffd11a'
             } else {
@@ -40,16 +40,12 @@ const sendForm = () => {
 
 
         form.addEventListener('submit', (event) => {
-            console.log(userName.value);
-
-
-
-
-
-
             const clearForm = () => {
                 thanks.style.display = 'block'
-                userName.value = ''
+                if (userName) {
+                    userName.value = ''
+                }
+
                 userPhone.value = ''
                 setTimeout(() => {
                     popup.forEach(item => {
