@@ -18,7 +18,6 @@ selectClub()
 modalWindow()
 openMenu()
 sliders('.main-slider>.slide')
-// sliders('.gallery-slider>.slide')
 scrollBtn()
 calc()
 
@@ -26,8 +25,6 @@ calc()
 let sliderCar = new sliderCarousel({
     main: '.services-wrapper',
     wrap: '.services-slider',
-    // prev: '#test-left',
-    // next: '#test-right',
     slidesToShow: 4,
     infinity: true
 })
@@ -37,7 +34,5 @@ sliderCar.init()
 slide2()
 
 sendForm()
-// sendForm()
-// sendForm()
 
 maskPhone('input[name="phone"]');

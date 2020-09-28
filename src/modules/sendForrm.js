@@ -7,15 +7,35 @@ const sendForm = () => {
         successMessage = 'Спасибо! Мы скоро с Вами свяжемся'
 
     const forms = document.querySelectorAll('.forms');
-    const thanks = document.getElementById('thanks')
+    const thanks = document.getElementById('thanks'),
+        popup = document.querySelectorAll('.popup'),
+        responseForm = thanks.querySelector('.response'),
+        catchForm = thanks.querySelector('.catch')
+    
+    
+
 
 
     const statusMessage = document.createElement('div')
-    // statusMessage.style.cssText = `font-size: 2rem; color: ${color}`
 
     forms.forEach(form => {
         form.addEventListener('submit', (event) => {
             let userName = form.querySelector('input[name="name"]');
+            let userPhone = form.querySelector('input[name="phone"]');
+
+            const clearForm = () => {
+                thanks.style.display = 'block'
+                userName.value = ''
+                userPhone.value = ''
+                setTimeout(() => {
+                    popup.forEach(item => {
+                        item.style.display = 'none'
+                    })
+                }, 4000)
+            }
+
+
+
             event.preventDefault()
             form.appendChild(statusMessage)
 
@@ -39,20 +59,14 @@ const sendForm = () => {
                         if (response.status !== 200) {
                             throw new Error('Статус нетворк нот 200')
                         }
-                        thanks.style.display = 'block'
-                        // preloader.classList.add('loaded')
-                        // userName.forEach(item => item.value = '')
-                        // userPhone.forEach(item => item.value = '')
-                        statusMessage.textContent = successMessage
-                        setTimeout(() => {
-                            statusMessage.textContent = ''
-                        }, 4000)
+                        responseForm.style.display = 'block'
+                        catchForm.style.display = 'none'
+                        clearForm()
                     })
                     .catch(() => {
-                        statusMessage.textContent = errorMessage
-                        // userName.forEach(item => item.value = '')
-                        // userPhone.forEach(item => item.value = '')
-                        // preloader.classList.add('loaded')
+                        responseForm.style.display = 'none'
+                        catchForm.style.display = 'block'
+                        clearForm()
                     })
             })
         })

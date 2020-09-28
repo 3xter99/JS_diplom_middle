@@ -16,9 +16,6 @@ const modalWindow = () => {
             }
             
             popup.style.display = 'block';
-
-
-
         }
 
 
