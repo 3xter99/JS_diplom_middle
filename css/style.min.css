@@ -978,6 +978,10 @@ header .head .club-select .clubs-list ul {
 
 
 .portfolio-dots .dot {
+    position: relative;
+    /* display: flex; */
+    /* justify-content: center; */
+    bottom: 20px;
     cursor: pointer;
     height: 16px;
     width: 16px;
