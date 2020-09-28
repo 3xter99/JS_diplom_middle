@@ -42,7 +42,9 @@ const sendForm = () => {
 
 
         form.addEventListener('submit', (event) => {
-
+            popup.forEach(item => {
+                item.style.display = 'none'
+            })
             preloader.classList.remove('loaded')
             const clearForm = () => {
                 thanks.style.display = 'block'
@@ -54,9 +56,7 @@ const sendForm = () => {
 
                 userPhone.value = ''
                 setTimeout(() => {
-                    popup.forEach(item => {
-                        item.style.display = 'none'
-                    })
+
                 }, 4000)
                 if (monthInput) {
                     monthInput[0].checked = true
