@@ -10,6 +10,7 @@ import sliderCarousel from "./modules/sliderCarousel";
 import sendForm from "./modules/sendForrm";
 import maskPhone from "./modules/maskPhone";
 import slide2 from "./modules/slide2.0";
+import hamburger from "./modules/hamburger";
 
 
 
@@ -36,3 +37,5 @@ slide2()
 sendForm()
 
 maskPhone('input[name="phone"]');
+
+hamburger()
