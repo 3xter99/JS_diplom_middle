@@ -50,7 +50,7 @@ const calc = () => {
 
     }
 
-    form.addEventListener('change', handleInput)
+    form.addEventListener('input', handleInput)
 
 
 
