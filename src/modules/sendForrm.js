@@ -57,7 +57,7 @@ const sendForm = () => {
 
                 userPhone.value = ''
                 setTimeout(() => {
-
+                thanks.style.display = 'none'
                 }, 4000)
                 if (monthInput && monthInput[0]) {
                     monthInput[0].checked = true
