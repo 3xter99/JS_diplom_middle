@@ -9,6 +9,7 @@ const sendForm = () => {
         responseForm = thanks.querySelector('.response'),
         catchForm = thanks.querySelector('.catch')
     let monthInput = document.querySelectorAll('.month-input');
+    const preloader = document.querySelector('.preloader')
     
 
 
@@ -29,7 +30,7 @@ const sendForm = () => {
             if (target.name === 'name') {
                 target.value = target.value.replace(/[^А-Яа-я\s]/, '')
             }
-            if (!userName || userName.value !== '' && userPhone.value !== '' && !checkbox || checkbox.checked ) {
+            if ((!userName || userName.value !== '') && userPhone.value !== '' && (!checkbox || checkbox.checked) ) {
                 btn.disabled = false
                 btn.style.backgroundColor = '#ffd11a'
             } else {
@@ -41,12 +42,15 @@ const sendForm = () => {
 
 
         form.addEventListener('submit', (event) => {
+
+            preloader.classList.remove('loaded')
             const clearForm = () => {
                 thanks.style.display = 'block'
                 if (userName) {
                     userName.value = ''
                 }
                 checkbox.checked = false
+
 
                 userPhone.value = ''
                 setTimeout(() => {
@@ -86,6 +90,7 @@ const sendForm = () => {
                         responseForm.style.display = 'block'
                         catchForm.style.display = 'none'
                         clearForm()
+                        preloader.classList.add('loaded')
                     })
                     .catch(() => {
                         responseForm.style.display = 'none'
