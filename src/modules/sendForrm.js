@@ -26,10 +26,13 @@ const sendForm = () => {
         btn.style.backgroundColor = '#808080'
 
 
+
         form.addEventListener('input', (event) => {
+
             const target = event.target
+
             if (target.name === 'name') {
-                target.value = target.value.replace(/[^А-Яа-я\s]/, '')
+                target.value = target.value.replace(/[^А-Яа-я\s]/g, '')
             }
             if ((!userName || userName.value !== '') && userPhone.value !== '' && (!checkbox || checkbox.checked) ) {
                 btn.disabled = false
@@ -43,7 +46,6 @@ const sendForm = () => {
 
 
         form.addEventListener('submit', (event) => {
-            console.log(form.querySelector('#price-total'));
             popup.forEach(item => {
                 item.style.display = 'none'
             })
