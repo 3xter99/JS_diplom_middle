@@ -96,6 +96,7 @@ const sendForm = () => {
                     .catch(() => {
                         responseForm.style.display = 'none'
                         catchForm.style.display = 'block'
+                        preloader.classList.add('loaded')
                         clearForm()
                     })
             })
