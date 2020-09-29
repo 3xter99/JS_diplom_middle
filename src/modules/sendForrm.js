@@ -8,7 +8,8 @@ const sendForm = () => {
         popup = document.querySelectorAll('.popup'),
         responseForm = thanks.querySelector('.response'),
         catchForm = thanks.querySelector('.catch')
-    let monthInput = document.querySelectorAll('.month-input');
+    let monthInput = document.querySelectorAll('.month-input'),
+        clubInput = document.querySelectorAll('.club-input');
     const preloader = document.querySelector('.preloader')
 
 
@@ -17,11 +18,13 @@ const sendForm = () => {
     forms.forEach(form => {
         let userName = form.querySelector('input[name="name"]');
         let userPhone = form.querySelector('input[name="phone"]');
+        let promo = form.querySelector('.promo-input')
         let btn = form.querySelector('button');
         let checkbox = form.querySelector('.checkbox-popup');
 
         btn.disabled = true
         btn.style.backgroundColor = '#808080'
+
 
         form.addEventListener('input', (event) => {
             const target = event.target
@@ -40,6 +43,7 @@ const sendForm = () => {
 
 
         form.addEventListener('submit', (event) => {
+            console.log(form.querySelector('#price-total'));
             popup.forEach(item => {
                 item.style.display = 'none'
             })
@@ -61,6 +65,9 @@ const sendForm = () => {
                 }, 4000)
                 if (monthInput && monthInput[0]) {
                     monthInput[0].checked = true
+                    clubInput[0].checked = true
+                    promo.value = ''
+                    form.querySelector('#price-total').textContent = 1990
                 }
                 btn.disabled = true
                 btn.style.backgroundColor = '#808080'
